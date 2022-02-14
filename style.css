@@ -709,7 +709,10 @@ section.gallery-container img:hover{
 }
 @media (max-width: 930px) {
     .nav-links{
-        left: 30%;
+        left: 35%;
+    }
+    .nav-links li{
+        font-size: 13px;
     } 
     section#service article{
         grid-template-columns: repeat(3, 1fr);
@@ -818,7 +821,7 @@ section.gallery-container img:hover{
     }
     nav button{
         position: relative;
-        left: 400px;
+        left: 300px;
     }
     nav a img.logo{
         height: 50px;
@@ -840,7 +843,7 @@ section.gallery-container img:hover{
 }
 @media (max-width: 590px) {
     nav button{
-        left: 300px;
+        left: 200px;
     }
     nav a img.logo{
         height: 40px;
@@ -854,7 +857,7 @@ section.gallery-container img:hover{
     }
     .btn-white, .btn{
         padding: 10px 30px;
-        font-size: 1.7rem;
+        font-size: 1.2rem;
     }
     section#service article{
         grid-template-columns: repeat(1, 1fr);
@@ -886,7 +889,7 @@ section.gallery-container img:hover{
 }
 @media (max-width: 490px) {
     nav button{
-        left: 250px;
+        left: 150px;
     }
     nav a img.logo{
         height: 30px;
@@ -897,7 +900,12 @@ section.gallery-container img:hover{
 }
 @media (max-width: 330px) {
     nav button{
-        left: 150px;
+        left: 80px;
+    }
+}
+@media (max-width: 250px) {
+    nav button{
+        left: 50px;
     }
 }
 
