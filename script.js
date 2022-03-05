@@ -1,3 +1,4 @@
+/*
 const navBar = document.querySelector("nav");
 const navList = document.querySelector("nav ul");
 const navToggleBtn = document.querySelector(".nav-toggle");
@@ -32,3 +33,73 @@ root.style.setProperty("--marquee-elements", marqueeContent.children.length);
 for (let i = 0; i < marqueeElementsDisplayed; i++) {
 	marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
 };
+*/
+
+
+// MULTI-STEP FORM LOGIC
+
+const prevBtns = document.querySelectorAll(".btn-prev");
+const nextBtns = document.querySelectorAll(".btn-next");
+const progress = document.getElementById("progress");
+const formSteps = document.querySelectorAll(".form-step");
+const progressSteps = document.querySelectorAll(".progress-step");
+
+let formStepsNum = 0;
+
+nextBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    formStepsNum++;
+    updateFormSteps();
+    updateProgressbar();
+  });
+});
+
+prevBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    formStepsNum--;
+    updateFormSteps();
+    updateProgressbar();
+  });
+});
+
+function updateFormSteps() {
+  formSteps.forEach((formStep) => {
+    formStep.classList.contains("form-step-active") &&
+      formStep.classList.remove("form-step-active");
+  });
+
+  formSteps[formStepsNum].classList.add("form-step-active");
+}
+
+function updateProgressbar() {
+  progressSteps.forEach((progressStep, idx) => {
+    if (idx < formStepsNum + 1) {
+      progressStep.classList.add("progress-step-active");
+    } else {
+      progressStep.classList.remove("progress-step-active");
+    }
+  });
+
+  const progressActive = document.querySelectorAll(".progress-step-active");
+
+  progress.style.width =
+    ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+}
+
+
+// MAKING SURE TERMS IS CHECKED BEFORE FORM SUBMIT
+const checkInput = document.querySelector("input.terms-check");
+const submitBtn = document.getElementById("submit-btn");
+submitBtn.disabled = true;
+checkInput.addEventListener("change", ()=>{
+    if (checkInput.checked) {
+        submitBtn.classList.remove("btn-disabled");
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.classList.add("btn-disabled");
+        submitBtn.disabled = true;
+    }
+});
+// console.log(checkInput.value);

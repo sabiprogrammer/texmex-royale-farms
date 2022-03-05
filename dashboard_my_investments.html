@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="dashboard_style.css">
+</head>
+<body>
+	<input type="checkbox" id="nav-toggle">
+	<div class="sidebar">
+		<div class="sidebar-brand">
+			<h2>
+				<span class="lab la-accusoft"></span>
+				<span>TexMex Royale Farms</span>
+			</h2>
+		</div>
+
+		<div class="sidebar-menu">
+			<ul>
+				<li>
+					<a href="./dashboard_index.html">
+						<span class="fas fa-home"></span>
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li>
+					<a href="" class="active-sidebar">
+						<span class="fas fa-money-check-alt"></span>
+						<span>My Investments</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="fas fa-wallet"></span>
+						<span>Wallet</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="fas fa-users-cog"></span>
+						<span>Settings</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="fa fa-sign-out-alt"></span>
+						<span>Log out</span>
+					</a>
+				</li>
+			</ul>
+		</div>	
+	</div>
+
+	<div class="main-content">
+		<header class="sidebar-header">
+			<h2>
+				<label for="nav-toggle">
+					<span class="fa fa-bars"></span>
+				</label>
+				Dashboard
+			</h2>
+			<div class="search-wrapper">
+				<span class="fa fa-search"></span>
+				<input type="search" name="search" placeholder="Search here...">
+			</div>
+			<div class="user-wrapper">
+				<img src="./image/happy_farmer.png" width="40px" height="40px" alt="">
+				<div>
+					<h4>John Doe</h4>
+					<small>Super Admin</small>
+				</div>
+			</div>
+		</header>
+		<main class="main-sidebar">
+			<div>
+				<div class="dashboard-projects">
+					<div class="dashboard-card">
+						<div class="card-header">
+							<h3>Investment Details</h3>
+							<button>
+								details
+								<span class="fas fa-arrow-right"></span>
+							</button>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table width="100%" class="dashboard-table">
+									<thead>
+										<tr>
+											<td>Package</td>
+											<td>Amount Invested</td>
+											<td>Date Started</td>
+											<td>Duration</td>
+											<td>Status</td>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Fish Investment</td>
+											<td>&#8358;500,000</td>
+											<td>Feb 29th, 2022</td>
+											<td>6 Months</td>
+											<td>
+												<span class="dashboard-status purple"></span> pending
+											</td>
+										</tr>
+										<tr>
+											<td>Poultry Investment</td>
+											<td>&#8358;200,000</td>
+                                            <td>Feb 29th, 2022</td>
+											<td>3 Months</td>
+											<td>
+												<span class="dashboard-status pink"></span> confirmed
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+</html>

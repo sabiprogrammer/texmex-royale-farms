@@ -25,6 +25,9 @@
     text-transform: capitalize;
     transition: all .3s linear;
 }
+body{
+    /* background-color: #eee; */
+}
 
 html{
     overflow-x: hidden;
@@ -102,7 +105,7 @@ nav.nav-sticky ul li:last-child a:hover{
 }
 .nav-links li a{
     text-decoration: none;
-    color: #fff;
+    color: var(--black)
     padding: 5px 0;
     position: relative;
 }
@@ -467,6 +470,7 @@ section#service article div p, section#service article div h3{
 }
 .services-wrapper{
     padding: 2rem;
+    padding-bottom: .1rem;
 }
 .services-wrapper article{
     display: flex;
@@ -500,6 +504,21 @@ section#service article div p, section#service article div h3{
 .services-wrapper article div p{
     padding-top: 2rem;
     font-size: 1rem;
+}
+section.other-services{
+    padding: 0 32px;
+    background-color: #eee;
+    text-align: center;
+    padding-bottom: 35px;
+}
+section.other-services article{
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+}
+section.other-services article div{
+    background-color: #fff;
+    padding: 25px;
 }
 /* SERVICES PAGE ENDS */
 
@@ -602,7 +621,216 @@ section.gallery-container img:hover{
 }
 /* SINGLE PACAKE PAGE ENDS */
 
+/* PICK INVESTMENT PAGE STYLES STARTS */
+.pick-investment-header ul li a{
+    color: black;
+}
+.pick-package-section{
+    /* margin-top: 15rem; */
+    position: relative;
+    top: 150px;
+    margin-bottom: 200px;
+}
+.pick-package-section article{
+    margin: 0 150px;
+    max-width: 900px;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.labelexpanded{
+    width: 100%;
+}
+.labelexpanded > input{
+    display: none;
+}
+.labelexpanded input:checked + .radio-btns{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.pick-invest-pack h3{
+    text-align: center;
+}
+.radio-btns{
+    border-radius: 15px;
+    padding: 15px 20px;
+    box-shadow: 0 1px #c3c3c3;
+    cursor: pointer;
+    background-color: #eaeaea;
+}
+.leftside{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.packages-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* PICK INVESTMENT PAGE STYLES ENDS */
 
+/*  INVESTMENT REGISTRATION PAGE STARTS */
+/* label {
+    display: block;
+    margin-bottom: 0.5rem;
+  } */
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+  }
+  
+  .width-50 {
+    width: 50%;
+  }
+  
+  .ml-auto {
+    margin-left: auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Progressbar */
+  .progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+  }
+  
+  .progressbar::before,
+  .progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #dcdcdc;
+    z-index: -1;
+  }
+  
+  .progress {
+    background-color: var(--primary-color);
+    width: 0%;
+    transition: 0.3s;
+  }
+  
+  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+  }
+  
+  .progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .progress-step-active {
+    background-color: var(--primary-color);
+    color: #f3f3f3;
+  }
+  
+  /* Form */
+  .form {
+    /* width: clamp(350px, 50%, 430px); */
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 23px;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+    box-shadow: 0px 0px 7px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 7px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 7px -3px rgba(0,0,0,0.75);
+    -o-box-shadow: 0px 0px 7px -3px rgba(0,0,0,0.75);
+  }
+  
+  .form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .input-group {
+    margin: 2rem 0;
+  }
+  
+  @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button */
+  .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+ 
+  .btn:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+  }
+input#submit-btn.btn-disabled,
+input#submit-btn.btn-disabled:hover{
+    background: grey;
+    color: whitesmoke;
+    border: 1px solid grey;
+    cursor: not-allowed;
+}
+input#submit-btn.btn-disabled:hover{
+    box-shadow: 0 0 0 2px grey;
+}
+ol.terms{
+    padding: 0 15px;
+}
+input.terms-check{
+    display: inline;
+    width: auto;
+}
+/*  INVESTMENT REGISTRATION PAGE ENDS */
+
+
+/* TERMS OF USE PAGE STYLE STARTS */
+section.terms-container{
+    margin: 5rem;
+}
+section.terms-container h2{
+    margin-top: 2rem;
+}
+/* TERMS OF USE PAGE STYLE ENDS */
 /* footer styles start */
 .footer{
     padding: 2rem;
@@ -763,6 +991,12 @@ section.gallery-container img:hover{
     div.services-wrapper article img{
         width: 100%;
     }
+
+    section.other-services article{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
     /* SINGLE PACKAGE PAGE STYLE STARTS */
     section.single-package-container article{
         flex-wrap: wrap;
@@ -886,6 +1120,17 @@ section.gallery-container img:hover{
         grid-template-columns: repeat(1, 1fr);
     }
     /* SINGLE PACKAGE PAGE ENDS */
+
+    /* PICK INVESTMENT PAGE STARTS */
+    .pick-package-section article{
+        margin: 0 0 0 10px;
+    }
+    /* PICK INVESTMENT PAGE ENDS */
+
+    /* TERMS & PRIVACY POLICY PAGE */
+    section.terms-container{
+        margin: 2rem;
+    }
 }
 @media (max-width: 490px) {
     nav button{
@@ -897,10 +1142,18 @@ section.gallery-container img:hover{
     a.moreBtn{
         left: 10%;
     }
+
+    section.other-services article{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 @media (max-width: 330px) {
     nav button{
         left: 80px;
+    }
+    .leftside{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
     }
 }
 @media (max-width: 250px) {
