@@ -37,14 +37,14 @@
             <p>Investments</p>
             <h2>Our Various Investment Packages</h2>
         </div>
-        <article>
+        <!-- <article>
             <h2>
                 Own A Farm Without Lifting A Finger
             </h2>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nulla doloribus ipsa laborum sint dignissimos recusandae eveniet a vel neque vero, iste ullam temporibus, nihil exercitationem dicta ex molestiae odit!
             </p>
-        </article>
+        </article> -->
     </section>
 
     <section class="pick-invest-pack">
@@ -184,14 +184,20 @@
                         <li>The client shall also have access to capacity building programs organized by TEX-MEX ROYALE FARMS but strictly by invitation.</li>
                         <li>TEX-MEX ROYALE FARMS shall not be responsible for any setback on the project resulting from no availability of capital or delay of capital provision by the client.</li>
                         <li>All projects shall be insured against any disastrous occurrences</li>
-                        <li>TEX-MEX ROYALE FARMS shall not be liable for any disaster or damages resulting from any natural cause that are not coverable by the insurance policy  as this may be defined as circumstances unforeseen or beyond our control.</li>
+                        <!-- <li>TEX-MEX ROYALE FARMS shall not be liable for any disaster or damages resulting from any natural cause that are not coverable by the insurance policy  as this may be defined as circumstances unforeseen or beyond our control.</li> -->
                         <li>All documents and files concerning this project must be kept confidential between TEX-MEX ROYALE FARMS and the client not to be used as a prerequisite for loan procurement nor advertisement.</li>
                     </ol>
                   </div>
                   <div class="input-group">
                       <label for="terms-check">
                         <input type="checkbox" class="terms-check" id="terms-check" />
-                        I agree to the above terms and condition
+                        I agree to the above terms of use
+                      </label>
+                  </div>
+                  <div class="input-group">
+                      <label for="terms-check2">
+                        <input type="checkbox" class="terms-check" id="terms-check2" />
+                        I agree to the above privacy policies
                       </label>
                   </div>
                   
@@ -310,11 +316,22 @@
   
   
         // MAKING SURE TERMS IS CHECKED BEFORE FORM SUBMIT
-        const checkInput = document.querySelector("input.terms-check");
+        const checkInput = document.querySelectorAll("input.terms-check");
         const submitBtn = document.getElementById("submit-btn");
+
         submitBtn.disabled = true;
-        checkInput.addEventListener("change", ()=>{
-            if (checkInput.checked) {
+
+        checkInput[0].addEventListener("change", ()=>{
+            if (checkInput[0].checked && checkInput[1].checked) {
+                submitBtn.classList.remove("btn-disabled");
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.classList.add("btn-disabled");
+                submitBtn.disabled = true;
+            }
+        });
+        checkInput[1].addEventListener("change", ()=>{
+            if (checkInput[0].checked && checkInput[1].checked) {
                 submitBtn.classList.remove("btn-disabled");
                 submitBtn.disabled = false;
             } else {
