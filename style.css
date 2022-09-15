@@ -22,7 +22,6 @@
     box-sizing: border-box;
     outline: none; border:none;
     text-decoration: none;
-    text-transform: capitalize;
     transition: all .3s linear;
 }
 body{
@@ -87,7 +86,7 @@ nav{
 }
 .nav-links li a{
     text-decoration: none;
-    color: var(--black)
+    color: var(--black);
     padding: 5px 0;
     position: relative;
 }
@@ -813,6 +812,21 @@ section.terms-container h2{
     margin-top: 2rem;
 }
 /* TERMS OF USE PAGE STYLE ENDS */
+
+/* ABOUT PAGE */
+.about-header{
+    height: auto;
+}
+#about-us-page{
+    max-width: 900px;
+    margin: 7rem 5rem;
+}
+#about-us-page div p {
+    text-align: justify;
+}
+/* ABOUT PAGE ENDS */
+
+
 /* footer styles start */
 .footer{
     padding: 2rem;
